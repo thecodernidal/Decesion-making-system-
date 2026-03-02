@@ -1,0 +1,40 @@
+START
+  |
+  v
+Take Criteria Input
+  - Name
+  - Type (benefit/cost)
+  - Priority Rank
+  |
+  v
+Take Options Input
+  - Option Names
+  - Values for each criterion
+  |
+  v
+Convert Rank → Raw Weight
+  wᵢ′ = (n − rᵢ + 1)
+  |
+  v
+Normalize Weights
+  wᵢ = wᵢ′ / Σwᵢ′
+  |
+  v
+Normalize Criterion Values
+  If benefit:
+     xᵢⱼ(norm) = xᵢⱼ / max(xⱼ)
+  If cost:
+     xᵢⱼ(norm) = min(xⱼ) / xᵢⱼ
+  |
+  v
+Calculate Final Scores
+  Scoreᵢ = Σ (xᵢⱼ(norm) × wⱼ)
+  |
+  v
+Compare Scores
+  |
+  v
+Select Option with Highest Score
+  |
+  v
+END
